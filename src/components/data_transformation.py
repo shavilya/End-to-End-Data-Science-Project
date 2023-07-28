@@ -17,7 +17,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -29,13 +29,13 @@ class DataTransformation:
         
         '''
         try:
-            numerical_columns = ["writing score", "reading score"]
+            numerical_columns = ["writing_score", "reading_score"]
             categorical_columns = [
                 "gender",
-                "race/ethnicity",
-                "parental level of education",
+                "race_ethnicity",
+                "parental_level_of_education",
                 "lunch",
-                "test preparation course"
+                "test_preparation_course"
 
             ]
 
@@ -87,8 +87,8 @@ class DataTransformation:
 
             preprocessing_obj=self.get_data_transformer_object()
 
-            target_column_name="math score"
-            numerical_columns = ["writing score", "reading score"]
+            target_column_name="math_score"
+            numerical_columns = ["writing_score", "reading_score"]
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
