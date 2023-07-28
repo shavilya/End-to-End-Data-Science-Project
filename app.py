@@ -1,13 +1,10 @@
 import streamlit as st
-import numpy as np
-import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
 def predict_datapoint():
-    st.header("Predict Data Point")
-    st.write("Enter the following details to predict the result:")
+    st.write("Enter the following details to predict the maths score:")
 
     gender = st.selectbox("Gender", ['male', 'female'])
     race_ethnicity = st.selectbox("Race_ethnicity", ['group A', 'group B', 'group C', 'group D', 'group E'])
